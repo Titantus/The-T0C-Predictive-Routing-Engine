@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-background: #0F0F14;
+  --color-accent: #00FFFF;
+  --color-accent-gold: #FFD700;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white font-sans antialiased;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .slide {
+    height: 100vh;
+    width: 100vw;
+    page-break-after: always;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem !important;
+    background-color: #0F0F14 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
